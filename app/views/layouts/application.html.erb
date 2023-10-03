@@ -11,6 +11,24 @@
   </head>
 
   <body>
+  <nav class='sign_in_user_bar'>
+      <% unless user_signed_in? %>
+        <div class="user-sign user-sign-in-link">
+          <%= link_to 'Sign in', new_user_session_path, method: :delete %>
+        </div>
+      <% end %>
+      <% if user_signed_in? %>
+        <div class="user-sign-in-link">
+        <div class="header">
+        <ul>
+        <li class="sign_out"><%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %></li>
+      </ul>
+       </div>
+      </div>
+<% end %>
+</nav>
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
