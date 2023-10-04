@@ -1,6 +1,6 @@
 class Payment < ApplicationRecord
-    belongs_to :user
-    belongs_to :category
-    validates :name, presence: true
-    validates :amount, presence: true
+  belongs_to :user
+  belongs_to :category
+  validates :name, presence: true
+  validates :amount, presence: true
 end
