@@ -1,1 +1,31 @@
 <h2>Payments page</h2>
+<div class="container">
+  <div class="detail">
+    <div class="icon_name">
+      <img src="<%= @category.icon %>" alt="category icon">
+      <%= @category.name %>
+    </div>
+  </div>
+  <div class="total">
+    Total Amount: $<%= @total_amount %>
+  </div>
+  <div class="payments">
+    <% if @payments.any? %>
+      <% @payments.each do |payment| %>
+        <div class="each">
+          <%= link_to category_payment_path(@category, payment) do %>
+            <div>
+              <%= payment.name %>
+              <p><%= payment.created_at %></p>
+            </div>
+            $<%= payment.amount %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="addbtn">
+    <%= link_to 'Add Transactions', new_category_payment_path(category_id: @category.id), class: "add-button" %>
+  </div>
+  <%= link_to 'Back', categories_path %>
+</div>

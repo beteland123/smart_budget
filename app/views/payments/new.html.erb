@@ -1,0 +1,20 @@
+<div class="cont">
+<%= form_with(model: [@category, @payment], local: true) do |f| %>
+    <div>
+      <%= f.label :name, 'Name' %>
+      <%= f.text_field :name, placeholder: 'Transaction name' %>
+    </div>
+  
+    <div>
+      <%= f.label :amount, 'Amount'%>
+      <%= f.text_field :amount, placeholder: 'Your payment ' %>
+    </div>
+    <%= f.hidden_field :category_id, value: @category.id %>
+    <div>
+      <%= f.submit 'Add Transaction'%>
+    </div>
+     
+  <% end %>
+  
+  <%= link_to 'Back', category_payments_path(category_id: @category.id) %>
+</div>

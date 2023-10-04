@@ -4,11 +4,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  devise_scope :user do
-    get "/custom_sign_out" => "devise/sessions#destroy", as: :custom_destroy_user_session
+  
+ 
+  authenticated :user do
+    root 'categories#index', as: :authenticated_root
   end
-  resources :categories, only: [:index, :new, :create,:destroy] do
-    resources :payments, only: [:index, :new, :create]
+   # Root route for non-authenticated users (welcome page)
+  unauthenticated do
+    root to: 'categories#welcome', as: :unauthenticated_root
   end
-  root "categories#index"
+
+  resources :categories do
+    resources :payments 
+  end
+  root "categories#welcome"
 end

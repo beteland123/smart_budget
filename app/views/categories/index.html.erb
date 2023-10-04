@@ -1,1 +1,27 @@
 <h2>Categories page</h2>
+<div>
+<div>
+<div class="container">
+<% if @categories.any? %>
+  <% @categories.each do |category| %> 
+    <div class="each">
+      <div class="leftDiv">
+        <div class="img">
+           <img src="<%= category.icon %>" alt="category icon">
+        </div>
+        <div clas="content">
+            <h3><%= link_to category.name, category_payments_path(category) %></h3>
+            <p><%= category.created_at%></p>
+        </div>
+      </div>
+      <div class="rightDiv">
+         <p><%= category.payments.sum(:amount) %></p>
+         <%= button_to "Delete Category", category_path(category), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
+  <% end%>
+<% else %>
+  <p>There is no categories you have yet!</p>
+<% end %>
+ <div class="addbtn"><%= link_to 'Add Category', new_category_path, class: "add-button" %></div>
+</div>
