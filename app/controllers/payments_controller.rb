@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-    before_action :set_category, only: %i[ new create]
+   # before_action :set_category, only: %i[ new create]
 
     def index
         @category = Category.includes(:payments).find(params[:category_id])
@@ -9,25 +9,29 @@ class PaymentsController < ApplicationController
     def new
         @current_user = current_user
         @category = Category.find(params[:category_id])
-        @payments = @current_user.payments.new(category: @category)
+        @payment = @current_user.payments.new(category: @category)
     end
     def create
         @current_user = current_user
         @category = Category.find(params[:category_id])
-        @payments = @current_user.payments.new(transaction_params)
-        @payments.category = @category
+        @payment = @current_user.payments.new(payments_params)
+        @payment.category = @category
     
-        if @payments.save
+        if @payment.save
           redirect_to category_payments_path(@category), notice: 'Transaction was successfully created.'
         else
           render :new
         end
       end
-    
+      def show
+        @current_user = current_user
+        @category = Category.find(params[:category_id])
+        @payment = @category.payments.find(params[:id])
+      end
       private
     
-      def transaction_params
-        params.require(:transaction).permit(:name, :amount, :category_id)
+      def payments_params
+        params.require(:payment).permit(:name, :amount, :category_id)
       end
       def set_category
           @category = Category.find(params[:id])
