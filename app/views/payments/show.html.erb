@@ -1,0 +1,15 @@
+<h2>Details</h2>
+<div class="payments detail">
+     
+    <div class="icon_name">
+        <img src="<%= @category.icon %>" alt="category icon">
+        <%= @category.name %>
+    </div>
+    <div class="payment">
+       <p><%= @payment.name %></p>
+       <p><%= @payment.created_at %></p>
+    </div>
+    <div class="amount">
+       Amount : <%= @payment.amount %>
+    <div>
+</div>
