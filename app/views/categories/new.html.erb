@@ -1,0 +1,21 @@
+<div class="cont">
+  <%= form_with model: @categories, url: categories_path, method: :post, local: true do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "Transport" %>
+    </div>
+    <div>
+      <%= f.label :icon %>
+      <%= f.select :icon, options_for_select(@icon_options), prompt: "Select an icon" %>
+    </div>
+    <div>
+      <% if @categories.icon.present? %>
+        <%= image_tag @categories.icon, alt: "Selected icon" %>
+      <% end %>
+    </div>
+    <div>
+      <%= f.submit "Add Category" %>
+    </div>
+  <% end %>
+  <%= link_to 'Back', categories_path %>
+</div>
