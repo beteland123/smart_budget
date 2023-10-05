@@ -21,7 +21,7 @@ RSpec.feature 'Categories', type: :feature do
           within(".leftDiv") do
             expect(page).to have_css("img[src='#{category.icon}']")
             expect(page).to have_link(category.name, href: "/categories/#{category.id}/payments")
-            expect(page).to have_content(category.created_at)
+            expect(page).to have_content(category.created_at.strftime("%Y-%m-%d %H:%M:%S"))
           end
       
           within(".rightDiv") do

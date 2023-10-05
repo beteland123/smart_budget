@@ -16,7 +16,7 @@
           <%= link_to category_payment_path(@category, payment) do %>
             <div>
               <%= payment.name %>
-              <p><%= payment.created_at %></p>
+              <p><%= payment.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
             </div>
             $<%= payment.amount %>
           <% end %>
