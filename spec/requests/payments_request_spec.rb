@@ -18,7 +18,7 @@ RSpec.describe PaymentsController, type: :controller do
     Category.create(
       name: 'Fast Food',
       icon: 'imgexample.png',
-      user: user
+      user:
     )
   end
 
@@ -46,23 +46,23 @@ RSpec.describe PaymentsController, type: :controller do
   end
   describe 'GET #show' do
     it 'returns a successful response' do
-        payment = Payment.create(
-            name: 'Burger',
-            amount: 1.5,
-            user: user,
-            category: category
-          )
+      payment = Payment.create(
+        name: 'Burger',
+        amount: 1.5,
+        user:,
+        category:
+      )
       get :show, params: { category_id: category.id, id: payment.id }
       expect(response).to have_http_status(:success)
     end
 
     it 'renders the show template' do
-        payment = Payment.create(
-            name: 'Burger',
-            amount: 1.5,
-            user: user,
-            category: category
-          )
+      payment = Payment.create(
+        name: 'Burger',
+        amount: 1.5,
+        user:,
+        category:
+      )
       get :show, params: { category_id: category.id, id: payment.id }
       expect(response).to render_template(:show)
     end

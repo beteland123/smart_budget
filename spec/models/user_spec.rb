@@ -23,10 +23,9 @@ RSpec.describe User, type: :model do
     it 'has many categories' do
       expect(User.reflect_on_association(:categories).macro).to eq(:has_many)
     end
-  
+
     it 'has many payments' do
       expect(User.reflect_on_association(:payments).macro).to eq(:has_many)
     end
   end
- 
 end

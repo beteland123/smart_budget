@@ -14,7 +14,7 @@ RSpec.describe Payment, type: :model do
     Category.new(
       name: 'Fast Food',
       icon: 'imgexample.png',
-      user: user
+      user:
     )
   end
 
@@ -22,8 +22,8 @@ RSpec.describe Payment, type: :model do
     payment = Payment.new(
       name: 'Burger',
       amount: 1.5,
-      user: user,
-      category: category
+      user:,
+      category:
     )
     expect(payment).to be_valid
   end
@@ -31,8 +31,8 @@ RSpec.describe Payment, type: :model do
   it 'is not valid without a name' do
     payment = Payment.new(
       amount: 1.5,
-      user: user,
-      category: category
+      user:,
+      category:
     )
     expect(payment).to_not be_valid
   end
@@ -40,8 +40,8 @@ RSpec.describe Payment, type: :model do
   it 'is not valid without an amount' do
     payment = Payment.new(
       name: 'Burger',
-      user: user,
-      category: category
+      user:,
+      category:
     )
     expect(payment).to_not be_valid
   end
@@ -51,8 +51,8 @@ RSpec.describe Payment, type: :model do
       payment = Payment.new(
         name: 'Burger',
         amount: 1.5,
-        user: user,
-        category: category
+        user:,
+        category:
       )
       expect(payment.user).to eq(user)
     end
@@ -61,8 +61,8 @@ RSpec.describe Payment, type: :model do
       payment = Payment.new(
         name: 'Burger',
         amount: 1.5,
-        user: user,
-        category: category
+        user:,
+        category:
       )
       expect(payment.category).to eq(category)
     end
