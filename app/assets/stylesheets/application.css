@@ -109,6 +109,15 @@ a{
     box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
     margin-top: 1em;
 }
+.pay {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
+  background-color: rgb(220, 226, 212);
+  opacity: 0.8;
+  align-items: center;
+  padding: 0.5em;
+}
 
 input[type=submit] {
   margin-top: 12px;
@@ -151,4 +160,72 @@ form{
   display: flex;
   gap: 1em;
   flex-direction: column;
+}
+.register {
+  box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
+  margin: 3em auto;
+  max-width: 30rem;
+ 
+  opacity: 0.8;
+  background-color: white;
+}
+.links a {
+  color: black;
+  opacity: 0.8;
+  border-radius: 0.5rem;
+}
+
+.links {
+  display: flex;
+  gap: 1em;
+  padding-top: 1em;
+}
+.register_header{
+  background-color: #3778c2;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+  align-items: center;
+}
+.register_header input[type=submit]{
+  background-color: #3778c2;
+}
+.register_header a{
+  color: white;
+}
+input[type="checkbox"]{
+  max-width:  2%;
+}
+.welcome_link{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.welcome_link a{
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  color: black;
+  border-radius: 10%;
+  box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
+  background-color: rgb(220, 226, 212);
+}
+.welcome_link a:hover{
+  background-color:  #3778c2;
+  color: white;
+}
+.we_div{
+  margin: 3em auto;
+  max-width: 39rem;
+  padding: 2em;
+  gap: 2em;
+  display: flex;
+  flex-direction: column;
+}
+h1{
+  display: flex;
+  justify-content: center;
+  color: #434b54;
+  font-family: "Futura Nova", sans-serif;
 }
