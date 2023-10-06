@@ -13,13 +13,13 @@
         </div>
       </div>
       <div class="rightDiv">
-         <p>Amount <%= category.payments.sum(:amount) %></p>
+         <p>$<%= category.payments.sum(:amount) %></p>
          <%= button_to "Delete Category", category_path(category), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
     </div>
   <% end%>
 <% else %>
-  <p>There is no categories you have yet!</p>
+  <p class="no">There is no categories you have yet!</p>
 <% end %>
  <div class="addbtn"><%= link_to 'Add Category', new_category_path, class: "add-button" %></div>
 </div>

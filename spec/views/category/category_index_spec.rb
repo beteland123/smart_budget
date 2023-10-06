@@ -25,7 +25,7 @@ RSpec.feature 'Categories', type: :feature do
           end
       
           within(".rightDiv") do
-            expect(page).to have_content("Amount #{category.payments.sum(:amount)}")
+            expect(page).to have_content("$#{category.payments.sum(:amount)}")
             expect(page).to have_button("Delete Category")
           end
         end

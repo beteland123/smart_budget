@@ -5,16 +5,17 @@
       <img src="<%= @category.icon %>" alt="category icon">
       <%= @category.name %>
     </div>
+      <div class="total">
+         Total Amount: $<%= @total_amount %>
+      </div>
   </div>
-  <div class="total">
-    Total Amount: $<%= @total_amount %>
-  </div>
+  
   <div class="payments">
     <% if @payments.any? %>
       <% @payments.each do |payment| %>
-        <div class="each">
+        <div class="each" id="each_py">
           <%= link_to category_payment_path(@category, payment) do %>
-            <div>
+            <div class="first">
               <%= payment.name %>
               <p><%= payment.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
             </div>
@@ -27,5 +28,5 @@
   <div class="addbtn">
     <%= link_to 'Add Transactions', new_category_payment_path(category_id: @category.id), class: "add-button" %>
   </div>
-  <%= link_to 'Back', categories_path %>
+  <div class="back_link"><%= link_to 'Back', categories_path %></div>
 </div>

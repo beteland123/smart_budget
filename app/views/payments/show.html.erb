@@ -1,4 +1,6 @@
 <h2>Details</h2>
+
+
 <div class="payments detail">
      
     <div class="icon_name">
@@ -11,5 +13,6 @@
     </div>
     <div class="amount">
        Amount : <%= @payment.amount %>
-    <div>
+    </div>
 </div>
+<div class="back_link" id="back"><%= link_to 'Back', category_payments_path(category_id: @category.id) %></div>
