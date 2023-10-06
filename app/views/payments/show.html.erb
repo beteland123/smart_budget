@@ -1,15 +1,18 @@
 <h2>Details</h2>
-<div class="payments detail">
+
+
+<div class="pay">
      
     <div class="icon_name">
         <img src="<%= @category.icon %>" alt="category icon">
         <%= @category.name %>
     </div>
     <div class="payment">
-       <p><%= @payment.name %></p>
-       <p><%= @payment.created_at %></p>
+       <p>Transaction <%= @payment.name %></p>
+       <p><%= @payment.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
     </div>
     <div class="amount">
-       Amount : <%= @payment.amount %>
-    <div>
+       Total payment : $<%= @payment.amount %>
+    </div>
 </div>
+<div class="back_link" id="back"><%= link_to 'Back', category_payments_path(category_id: @category.id) %></div>
