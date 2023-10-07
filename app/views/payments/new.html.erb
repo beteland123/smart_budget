@@ -9,7 +9,12 @@
       <%= f.label :amount, 'Amount'%>
       <%= f.text_field :amount, placeholder: 'Your payment ' %>
     </div>
-    <%= f.hidden_field :category_id, value: @category.id %>
+    
+    <div > 
+             <%= f.label :category_id, 'Select category' %>
+             <%= f.collection_select(:category_id, @available_categories, :id, :name, {}, {}) %>
+    </div>
+    
     <div>
       <%= f.submit 'Add Transaction'%>
     </div>

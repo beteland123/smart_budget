@@ -11,6 +11,7 @@ class PaymentsController < ApplicationController
     @current_user = current_user
     @category = Category.find(params[:category_id])
     @payment = @current_user.payments.new(category: @category)
+    @available_categories = Category.all
   end
 
   def create
