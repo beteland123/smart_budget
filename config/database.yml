@@ -20,21 +20,19 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  password: gB2uM2r08PODFCNXJojuroeobu_WSHv7
-  url: postgres://ejocaiym:gB2uM2r08PODFCNXJojuroeobu_WSHv7@flora.db.elephantsql.com/ejocaiym
-  username: ejocaiym
+  # uses the env variables for username and password
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %> 
 
 development:
   <<: *default
   database: smartbudget
-  password: gB2uM2r08PODFCNXJojuroeobu_WSHv7
-  url: postgres://ejocaiym:gB2uM2r08PODFCNXJojuroeobu_WSHv7@flora.db.elephantsql.com/ejocaiym
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: smart_budget
+  #username: journeycash
 
   # The password associated with the postgres role (username).
   #password:
@@ -62,9 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ejocaiym
-  password: gB2uM2r08PODFCNXJojuroeobu_WSHv7
-  url: postgres://ejocaiym:gB2uM2r08PODFCNXJojuroeobu_WSHv7@flora.db.elephantsql.com/ejocaiym
+  database: smartbudget
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -88,7 +84,9 @@ test:
 #
 production:
   <<: *default
-  database: ejocaiym
-  username: ejocaiym
-  password: gB2uM2r08PODFCNXJojuroeobu_WSHv7
-  url: postgres://ejocaiym:gB2uM2r08PODFCNXJojuroeobu_WSHv7@flora.db.elephantsql.com/ejocaiym
+  adapter: "postgresql"
+  encoding: "unicode"
+  url: <%= ENV["DATABASE_URL"] %>
+  database: smartbudget
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>

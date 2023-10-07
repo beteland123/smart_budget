@@ -5,7 +5,6 @@ RSpec.feature 'Payments', type: :feature do
   let(:category) { FactoryBot.create(:category) }
   let(:payment) { FactoryBot.create(:payment, category:) }
   before do
-    user.confirm
     sign_in user
   end
 

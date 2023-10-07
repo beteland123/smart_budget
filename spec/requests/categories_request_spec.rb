@@ -11,7 +11,6 @@ RSpec.describe CategoriesController, type: :controller do
   end
 
   before(:each) do
-    allow_any_instance_of(User).to receive(:confirmed?).and_return(true)
     sign_in user
   end
 

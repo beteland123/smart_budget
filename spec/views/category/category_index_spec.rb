@@ -4,7 +4,6 @@ RSpec.feature 'Categories', type: :feature do
   let(:user) { FactoryBot.create(:user) }
 
   before(:each) do
-    user.confirm
     sign_in user
   end
 
