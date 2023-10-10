@@ -13,21 +13,45 @@
  *= require_tree .
  *= require_self
  */
+@font-face {
+  font-family: 'proxima_nova_rgregular';
+  src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+  src:
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container {
-  display: flex;
-  flex-direction: column;
   justify-content: space-around;
   gap: 2em;
   padding: 1.25em;
 }
 
+.pay,
+.container,
+form,
+.welcome_link,
+.we_div,
+.payments {
+  flex-direction: column;
+}
+
 .each,
 .detail {
   background-color: white;
-  display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+}
+
+.pament_head,
+.detail_head {
+  display: none;
 }
 
 .img img,
@@ -42,25 +66,29 @@ a {
   text-decoration: none;
 }
 
-.leftDiv,
-.icon_name {
-  display: flex;
-  gap: 1em;
-}
-
 .content {
   color: #8492a2;
-  font-size: smaller;
+  font-size: small;
 }
 
-.content a {
+.content a,
+.content h3 {
   color: #8492a2;
   text-decoration: none;
   font-size: medium;
-  font-weight: bold;
+  font-weight: 500;
 }
 
-.rightDiv p {
+.content span {
+  font-weight: 100;
+  color: #b5b6b7;
+}
+.rightDiv{
+    width: 80%;
+    justify-content: space-between;
+    display: flex;
+}
+.rightDiv p,.right {
   color: #434b54;
   font-weight: bold;
 }
@@ -77,7 +105,6 @@ a {
 }
 
 .addbtn a {
-  display: flex;
   justify-content: center;
   padding: 0.5em;
   border: 1px solid white;
@@ -85,8 +112,6 @@ a {
 }
 
 h2 {
-  display: flex;
-  justify-content: center;
   color: #8492a2;
 }
 
@@ -94,16 +119,16 @@ h2 {
   box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
   background-color: rgb(220, 226, 212);
   opacity: 0.8;
-  align-items: center;
 }
 
 .icon_name,
-.first {
+.first,
+.detail {
   align-items: center;
 }
 
-.back_link {
-  display: flex;
+.back_link,
+h2 {
   justify-content: center;
 }
 
@@ -111,17 +136,18 @@ h2 {
   border: 1px solid #938f8f;
   padding: 1em;
   border-radius: 10%;
-  box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
   margin-top: 1em;
 }
 
-.pay {
-  display: flex;
-  flex-direction: column;
+.pay,
+.back_link a,
+.register {
   box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
-  background-color: rgb(220, 226, 212);
+}
+
+.pay {
+  background-color: white;
   opacity: 0.8;
-  align-items: center;
   padding: 0.5em;
 }
 
@@ -147,8 +173,36 @@ textarea,
   resize: vertical;
 }
 
-form div {
+.leftDiv {
+  gap: 1em;
+}
+.icon_name {
+  gap: 2em;
+}
+
+.welcome_link a,
+form div,
+.register_header,
+.links,
+.leftDiv,
+.icon_name,
+h1,
+.each,
+.detail,
+.back_link,
+h2,
+.addbtn a,
+.pay,
+.container,
+form,
+.welcome_link,
+.we_div,
+.payments {
   display: flex;
+}
+
+.payments {
+  gap: 1em;
 }
 
 label {
@@ -164,13 +218,10 @@ label {
 }
 
 form {
-  display: flex;
   gap: 1em;
-  flex-direction: column;
 }
 
 .register {
-  box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
   margin: 3em auto;
   max-width: 30rem;
   opacity: 0.8;
@@ -184,26 +235,31 @@ form {
 }
 
 .links {
-  display: flex;
   gap: 1em;
   padding-top: 1em;
 }
 
 .register_header {
   background-color: #3778c2;
-  display: flex;
   justify-content: space-between;
   color: white;
-  width: 100%;
+  width: 99.5%;
   align-items: center;
+  padding: 0.5em;
+  font-family: 'Proxima Nova', 'Inter', sans-serif;
 }
-
+.register_header h4{
+  font-weight: 300;
+}
 .register_header input[type=submit] {
   background-color: #3778c2;
+  font-weight: 200;
+  margin-top: 0;
 }
 
 .register_header a {
   color: white;
+  font-weight: 200;
 }
 
 input[type="checkbox"] {
@@ -211,28 +267,35 @@ input[type="checkbox"] {
 }
 
 .welcome_link {
-  display: flex;
-  flex-direction: column;
   gap: 2em;
 }
 
 .welcome_link a {
   padding: 1em;
-  display: flex;
   justify-content: center;
   color: black;
-  border-radius: 10%;
   box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
   background-color: rgb(220, 226, 212);
 }
-
+.welcome_link a:first-child {
+  background-color: #3778c2;
+  color: white;
+}
 .content a:hover {
   color: #0056b3;
 }
 
 .welcome_link a:hover {
-  background-color: #3778c2;
+  --tw-text-opacity: 1;
+  background-color: #4a9cf8;
   color: white;
+}
+
+.we_div {
+  margin: 3em auto;
+  max-width: 39rem;
+  padding: 2em;
+  gap: 2em;
 }
 
 #each_py a {
@@ -241,20 +304,9 @@ input[type="checkbox"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold;
-}
-
-.we_div {
-  margin: 3em auto;
-  max-width: 39rem;
-  padding: 2em;
-  gap: 2em;
-  display: flex;
-  flex-direction: column;
 }
 
 h1 {
-  display: flex;
   justify-content: center;
   color: #434b54;
   font-family: "Futura Nova", sans-serif;

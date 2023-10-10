@@ -1,13 +1,35 @@
-<h2>Payments page</h2>
+
+<style>
+  .hide_header{
+    display:none
+  }
+  .pament_head{
+    display: flex;
+    align-self: center;
+  }
+  .container{
+    margin-top:0;
+    padding:0;
+  }
+  .payments{
+    padding:0.5em;
+  }
+  .category_head{
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-radius: 0px;
+  }
+</style>
 <div class="container">
-  <div class="detail">
-    <div class="icon_name">
-      <img src="<%= @category.icon %>" alt="category icon">
-      <%= @category.name %>
+  <div class="each category_head" id="each_py">
+    <div class="leftDiv">
+       <h2 class="content"> 
+         <%= @category.name %>
+       </h2 >
     </div>
-      <div class="total">
-         Total Amount: $<%= @total_amount %>
-      </div>
+    <div class="right">
+        <p>$<%= @total_amount %></p>
+    </div>
   </div>
   
   <div class="payments">
@@ -15,16 +37,24 @@
       <% @payments.each do |payment| %>
         <div class="each" id="each_py">
           <%= link_to category_payment_path(@category, payment) do %>
-            <div class="first">
-              <%= payment.name %>
-              <p><%= payment.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
+            <div class="leftDiv">
+              <div class="img">
+                <img src="<%= @category.icon %>" alt="category icon">
+              </div>
             </div>
-            $<%= payment.amount %>
+            <div class="rightDiv">
+            <div class="content">
+            <h3><%= payment.name %></h3>
+            <span><%= payment.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
+          </div>
+              <p>$<%= payment.amount %></p>
+            </div>
           <% end %>
         </div>
       <% end %>
     <% end %>
   </div>
+  
   <div class="addbtn">
     <%= link_to 'Add Transactions', new_category_payment_path(category_id: @category.id), class: "add-button" %>
   </div>

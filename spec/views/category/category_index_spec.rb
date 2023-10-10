@@ -12,17 +12,17 @@ RSpec.feature 'Categories', type: :feature do
 
     visit categories_path
 
-    expect(page).to have_content('Categories')
+    expect(page).to have_content('CATEGORIES')
 
     categories.each do |category|
       within(".each:nth-of-type(#{categories.index(category) + 1})") do
         within('.leftDiv') do
           expect(page).to have_css("img[src='#{category.icon}']")
-          expect(page).to have_link(category.name, href: "/categories/#{category.id}/payments")
-          expect(page).to have_content(category.created_at.strftime('%Y-%m-%d %H:%M:%S'))
         end
 
         within('.rightDiv') do
+          expect(page).to have_link(category.name, href: "/categories/#{category.id}/payments")
+          expect(page).to have_content(category.created_at.strftime('%Y-%m-%d %H:%M:%S'))
           expect(page).to have_content("$#{category.payments.sum(:amount)}")
           expect(page).to have_button('Delete Category')
         end
@@ -35,7 +35,7 @@ RSpec.feature 'Categories', type: :feature do
   scenario 'User views categories when there are no categories available' do
     visit categories_path
 
-    expect(page).to have_content('Categories')
+    expect(page).to have_content('CATEGORIES')
     expect(page).to have_content('There is no categories you have yet!')
     expect(page).to have_link('Add Category', href: new_category_path)
   end

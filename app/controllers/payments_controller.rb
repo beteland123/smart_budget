@@ -2,9 +2,9 @@ class PaymentsController < ApplicationController
   # before_action :set_category, only: %i[ new create]
 
   def index
-    @category = Category.includes(:payments).find(params[:category_id])
+    @category = Category.find(params[:category_id])
     @payments = @category.payments.order(created_at: :desc)
-    @total_amount = @payments.sum(:amount)
+    @total_amount = @payments.sum(:amount) 
   end
 
   def new

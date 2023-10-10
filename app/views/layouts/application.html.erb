@@ -8,10 +8,9 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura+Nova&display=swap">
     <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'proxima-nova', sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f0f0f0;
@@ -40,7 +39,7 @@
     .nav-links a {
         text-decoration: none;
         color: #fff;
-        font-weight: bold;
+        font-weight: 100;
         transition: color 0.3s;
     }
 
@@ -72,7 +71,7 @@
     }
 
     .sign-out-button {
-        background-color: #d9534f;
+        background: linear-gradient(to right, #3498db, #2980b9);
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -90,6 +89,9 @@
         font-size: 1.3rem;
         padding: 0 10px;
     }
+    .hide_header{
+        align-self: center;
+    }
 </style>
 </head>
 <body>
@@ -100,7 +102,11 @@
       <ul class="nav-links">
           <li><%= link_to 'Smart budget', root_path, class: 'dashboard-nav' %></li>
           <li class="app-profile-auth">
-            <a><%= link_to 'Profile', edit_user_registration_path, class: 'profile-nav' %></a>
+            <a class="hide_header">CATEGORIES</a>
+             <a class="pament_head" >PAYMENTS</a>
+             <a class="detail_head" >DETAILS</a>
+           </li>
+           <li>
             <a><%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out-button' %></a>
           </li>
       </ul>

@@ -12,10 +12,8 @@ RSpec.feature 'Payments', type: :feature do
   scenario 'User views the payments page' do
     visit category_payments_path(category)
 
-    expect(page).to have_content('Payments page')
-    expect(page).to have_selector(".icon_name img[src*='#{url_for(category.icon)}']")
-    expect(page).to have_content(category.name)
-    expect(page).to have_content('Total Amount: $30')
+    expect(page).to have_content('PAYMENTS')
+    expect(page).to have_content('$30')
 
     payments.each do |payment|
       expect(page).to have_content(payment.name)
