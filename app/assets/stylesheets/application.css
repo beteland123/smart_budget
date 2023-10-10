@@ -83,12 +83,14 @@ a {
   font-weight: 100;
   color: #b5b6b7;
 }
-.rightDiv{
-    width: 80%;
-    justify-content: space-between;
-    display: flex;
+
+.rightDiv {
+  width: 80%;
+  justify-content: space-between;
 }
-.rightDiv p,.right {
+
+.rightDiv p,
+.right {
   color: #434b54;
   font-weight: bold;
 }
@@ -128,7 +130,9 @@ h2 {
 }
 
 .back_link,
-h2 {
+h2,
+.we_div,
+h1 {
   justify-content: center;
 }
 
@@ -176,6 +180,7 @@ textarea,
 .leftDiv {
   gap: 1em;
 }
+
 .icon_name {
   gap: 2em;
 }
@@ -197,7 +202,8 @@ h2,
 form,
 .welcome_link,
 .we_div,
-.payments {
+.payments,
+.rightDiv {
   display: flex;
 }
 
@@ -248,9 +254,11 @@ form {
   padding: 0.5em;
   font-family: 'Proxima Nova', 'Inter', sans-serif;
 }
-.register_header h4{
+
+.register_header h4 {
   font-weight: 300;
 }
+
 .register_header input[type=submit] {
   background-color: #3778c2;
   font-weight: 200;
@@ -266,10 +274,6 @@ input[type="checkbox"] {
   max-width: 2%;
 }
 
-.welcome_link {
-  gap: 2em;
-}
-
 .welcome_link a {
   padding: 1em;
   justify-content: center;
@@ -277,24 +281,48 @@ input[type="checkbox"] {
   box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
   background-color: rgb(220, 226, 212);
 }
+
 .welcome_link a:first-child {
   background-color: #3778c2;
   color: white;
 }
+
 .content a:hover {
   color: #0056b3;
 }
 
 .welcome_link a:hover {
   --tw-text-opacity: 1;
+
   background-color: #4a9cf8;
   color: white;
 }
 
 .we_div {
-  margin: 3em auto;
+  gap: 1em;
+  margin: 0 auto;
   max-width: 39rem;
-  padding: 2em;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+h1 {
+  color: #434b54;
+  font-family: "Futura Nova", sans-serif;
+}
+
+.we_div h1,
+.we_div h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.welcome_link {
+  position: absolute;
+  bottom: 0;
+  width: 96%;
+  padding: 4%;
   gap: 2em;
 }
 
@@ -304,10 +332,4 @@ input[type="checkbox"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-h1 {
-  justify-content: center;
-  color: #434b54;
-  font-family: "Futura Nova", sans-serif;
 }
