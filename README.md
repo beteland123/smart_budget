@@ -10,8 +10,8 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    - [Live demo](#Live Demo)
-    - [Presentation](#presentation)
+    - [Live Demo](#demo)
+    - [Video Presentation](#video) 
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -54,13 +54,13 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### 🚀Live Demo <a name="Live Demo"></a>
+## 🚀Live Demo <a name="demo"></a>
 
 [Live](https://betty5.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Presentation <a name="Presentation"></a>
+## :tv: Video Presentation <a name="video"></a>
 
 [Video](https://drive.google.com/file/d/1xQG_HgYMIbGelJ6hH1KvukTgX4OdOSb0/view?usp=sharing)
 
