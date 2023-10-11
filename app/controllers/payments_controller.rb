@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
   def index
     @category = Category.find(params[:category_id])
     @payments = @category.payments.order(created_at: :desc)
-    @total_amount = @payments.sum(:amount) 
+    @total_amount = @payments.sum(:amount)
   end
 
   def new
