@@ -1,0 +1,51 @@
+<style>
+  .hide_header{
+    display:none
+  }
+  .pay {
+      margin: 1em auto;
+      width: 60%
+  }
+  .detail_head{
+    display: flex;
+    align-self: center;
+  }
+  h2{
+    font-weight: 500;
+    color: #0b0b0b;
+  }
+  .day{
+    font-weight: 100;
+    color: #525354;
+    font-size: small;
+  }
+.trxn_name {
+    font-size: large;
+    font-weight: inherit;
+}
+.amount{  
+  justify-content: space-between;
+align-items: center;
+display: flex;
+}
+  .amount_value{
+    color: #434b54;
+    font-weight: bold;
+  }
+</style>
+<div class="pay">
+     
+    <div class="icon_name">
+        <img src="<%= @category.icon %>" alt="category icon">
+        <h2><%= @category.name %></h2>
+    </div>
+    <div class="payment">
+       <p class="trxn_name">Transaction <%= @payment.name %></p>
+       <p class="day"><%= @payment.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
+    </div>
+    <div class="amount">
+    <p class="trxn_name">Total payment :</p>
+     <p class="amount_value">$<%= @payment.amount %></p>
+    </div>
+</div>
+<div class="back_link" id="back"><%= link_to 'Back', category_payments_path(category_id: @category.id) %></div>

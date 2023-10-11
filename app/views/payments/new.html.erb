@@ -1,0 +1,23 @@
+<div class="cont">
+<%= form_with(model: [@category, @payment], local: true) do |f| %>
+  <h3> Transaction for <%= @category.name%></h3>
+    <div>
+      <%= f.text_field :name, placeholder: 'Transaction name' %>
+    </div>
+  
+    <div>
+      <%= f.text_field :amount, placeholder: 'Your payment ' %>
+    </div>
+    
+  <div >        
+     <%= f.collection_select(:category_id, @available_categories, :id, :name, {}, {}) %>
+  </div>
+    
+    <div>
+      <%= f.submit 'Add Transaction'%>
+    </div>
+     
+  <% end %>
+  
+  <div class="back_link"><%= link_to 'Back', category_payments_path(@category) %></div>
+</div>

@@ -1,0 +1,35 @@
+<div class="cont">
+  <%= form_with model: @categories, url: categories_path, method: :post, local: true do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "Transport" %>
+    </div>
+    <% icon_options = [
+           ['Transport', image_path('bu.png')],
+            ['Fast food',image_path('faast_food.png') ],
+            ['Clothing', image_path('cloth.png')],
+            ['Shopping',image_path('shopping.png') ],
+            ['Health', image_path('health.png')],
+            ['Utility', image_path('utility.jpeg')],
+            ['Education', image_path('education.png')],
+            ['Entertainment', image_path('enter.png')],
+  
+    ]  %>
+    <div>
+      <%= f.label :icon %>
+      <%= f.select :icon, options_for_select(icon_options), prompt: "Select an icon", id: "icon-select" %>
+    </div>
+    <div>
+    <% if @categories.icon.present? %>
+      <% selected_option = icon_options.find { |option| option[1] == @categories.icon } %>
+      <% if selected_option %>
+        <%= image_tag selected_option[1], alt: "Selected icon" %>
+      <% end %>
+    <% end %>
+  </div>
+    <div>
+      <%= f.submit "Add Category" %>
+    </div>
+  <% end %>
+  <div class="back_link"><%= link_to 'Back', categories_path %></div>
+</div>

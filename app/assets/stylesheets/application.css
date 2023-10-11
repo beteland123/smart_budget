@@ -1,0 +1,335 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@font-face {
+  font-family: 'proxima_nova_rgregular';
+  src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+  src:
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  justify-content: space-around;
+  gap: 2em;
+  padding: 1.25em;
+}
+
+.pay,
+.container,
+form,
+.welcome_link,
+.we_div,
+.payments {
+  flex-direction: column;
+}
+
+.each,
+.detail {
+  background-color: white;
+  justify-content: space-between;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+}
+
+.pament_head,
+.detail_head {
+  display: none;
+}
+
+.img img,
+.icon_name img {
+  max-width: 4em;
+  border-radius: 10%;
+  padding: 0.4em;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  color: #8492a2;
+  font-size: small;
+}
+
+.content a,
+.content h3 {
+  color: #8492a2;
+  text-decoration: none;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.content span {
+  font-weight: 100;
+  color: #b5b6b7;
+}
+
+.rightDiv {
+  width: 80%;
+  justify-content: space-between;
+}
+
+.rightDiv p,
+.right {
+  color: #434b54;
+  font-weight: bold;
+}
+
+.rightDiv button {
+  padding: 0.2em;
+  border: #ddd8d7;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.addbtn {
+  background-color: #5fb523;
+  padding: 1em;
+}
+
+.addbtn a {
+  justify-content: center;
+  padding: 0.5em;
+  border: 1px solid white;
+  color: white;
+}
+
+h2 {
+  color: #8492a2;
+}
+
+.detail {
+  box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
+  background-color: rgb(220, 226, 212);
+  opacity: 0.8;
+}
+
+.icon_name,
+.first,
+.detail {
+  align-items: center;
+}
+
+.back_link,
+h2,
+.we_div,
+h1 {
+  justify-content: center;
+}
+
+.back_link a {
+  border: 1px solid #938f8f;
+  padding: 1em;
+  border-radius: 10%;
+  margin-top: 1em;
+}
+
+.pay,
+.back_link a,
+.register {
+  box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
+}
+
+.pay {
+  background-color: white;
+  opacity: 0.8;
+  padding: 0.5em;
+}
+
+input[type=submit] {
+  margin-top: 12px;
+  background-color: #434b54;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+select,
+input,
+textarea,
+.post-button {
+  width: 100%;
+  padding: 1.5%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.leftDiv {
+  gap: 1em;
+}
+
+.icon_name {
+  gap: 2em;
+}
+
+.welcome_link a,
+form div,
+.register_header,
+.links,
+.leftDiv,
+.icon_name,
+h1,
+.each,
+.detail,
+.back_link,
+h2,
+.addbtn a,
+.pay,
+.container,
+form,
+.welcome_link,
+.we_div,
+.payments,
+.rightDiv {
+  display: flex;
+}
+
+.payments {
+  gap: 1em;
+}
+
+label {
+  width: 20%;
+}
+
+.cont {
+  margin: 0 auto;
+  max-width: 39rem;
+  padding: 3em;
+  color: rgb(34, 32, 32);
+  opacity: 0.8;
+}
+
+form {
+  gap: 1em;
+}
+
+.register {
+  margin: 3em auto;
+  max-width: 30rem;
+  opacity: 0.8;
+  background-color: white;
+}
+
+.links a {
+  color: black;
+  opacity: 0.8;
+  border-radius: 0.5rem;
+}
+
+.links {
+  gap: 1em;
+  padding-top: 1em;
+}
+
+.register_header {
+  background-color: #3778c2;
+  justify-content: space-between;
+  color: white;
+  width: 99.5%;
+  align-items: center;
+  padding: 0.5em;
+  font-family: 'Proxima Nova', 'Inter', sans-serif;
+}
+
+.register_header h4 {
+  font-weight: 300;
+}
+
+.register_header input[type=submit] {
+  background-color: #3778c2;
+  font-weight: 200;
+  margin-top: 0;
+}
+
+.register_header a {
+  color: white;
+  font-weight: 200;
+}
+
+input[type="checkbox"] {
+  max-width: 2%;
+}
+
+.welcome_link a {
+  padding: 1em;
+  justify-content: center;
+  color: black;
+  box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
+  background-color: rgb(220, 226, 212);
+}
+
+.welcome_link a:first-child {
+  background-color: #3778c2;
+  color: white;
+}
+
+.content a:hover {
+  color: #0056b3;
+}
+
+.welcome_link a:hover {
+  --tw-text-opacity: 1;
+
+  background-color: #4a9cf8;
+  color: white;
+}
+
+.we_div {
+  gap: 1em;
+  margin: 0 auto;
+  max-width: 39rem;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+h1 {
+  color: #434b54;
+  font-family: "Futura Nova", sans-serif;
+}
+
+.we_div h1,
+.we_div h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.welcome_link {
+  position: absolute;
+  bottom: 0;
+  width: 96%;
+  padding: 4%;
+  gap: 2em;
+}
+
+#each_py a {
+  width: 98%;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
